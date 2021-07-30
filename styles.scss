@@ -1,0 +1,518 @@
+$colorPrimero: #0CECDD;
+$colorSegundo: #FFF338;
+$colorTercero: #FF67E7;
+$colorCuarto: #C400FF;
+$fuenteTexto: 'Patua One';
+
+@import '_botones.scss';
+@import '_secciones2.scss';
+@import '_secciones.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto:wght@300&family=Titan+One&display=swap');
+
+body{
+    margin: 0px;
+}
+
+/*HEADER*/
+
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $colorPrimero;
+    height: 20vh;
+    .parte-logo{
+        display: inline-block;
+        margin: auto;
+        img{
+            width: 400px;
+            height: auto;
+        }
+    }
+    .parte-nav{
+        display: flex;
+        width: 50vw;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        .idioma{
+            @include botón;
+            width: 190px;
+            position: relative;
+            right: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 40px
+        }
+        .idioma:hover{
+            width: 228px;
+            height: 72px;
+            right: 121px;
+            font-size: 24px;
+        }
+        .instalar{
+            @include botón;
+            position: fixed;
+            animation-name: rebote;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 5s; /*animación dura 2s, descanso de 4s*/
+            animation-delay: 3s;
+        }
+        .instalar:hover{
+            width: 156px;
+            height: 72px;
+            font-size: 24px;
+            margin-right: 17px;
+            animation-play-state: paused;
+        }
+        .volver{
+            @include botón;
+        }
+        .volver:hover{
+            span::after{
+                content: "?";
+            }
+        }
+    }
+
+    .idioma{
+        img{
+            width: 36px;
+            height: auto;
+        }
+        span{
+            margin-left: 6px;
+        }
+    }
+
+}
+
+.parte-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0);
+    border-bottom-left-radius: 20px;
+}
+
+/*SECCIONES*/
+
+.seccion-sistema{
+    background-color: $colorPrimero;
+    height: auto;
+    h1{
+        text-align: center;
+        font-family: 'Patua One', sans-serif;
+        font-size: 36px;
+        margin: 0px;
+        color: white;
+    }
+}
+
+.general{
+    background-color: $colorPrimero;
+    color: white;
+    font-family: $fuenteTexto;
+    @include sección;
+    height: 80vh;
+    div{
+        h2{
+            margin-top: 0px;
+        }
+    }
+}
+
+.amigos{
+    background-color: $colorCuarto;
+    color: white;
+    font-family: $fuenteTexto;
+    @include sección;
+}
+
+.niveles{
+    background-color: $colorPrimero;
+    color: white;
+    font-family: $fuenteTexto;
+    @include sección;
+}
+
+.personalizacion{
+    background-color: $colorTercero;
+    color: white;
+    font-family: $fuenteTexto;
+    @include sección;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0CECDD;
+    height: 80vh
+}
+
+.card{
+    @include card;
+    .choice{
+        @include botón;
+        width: 160px;
+        height: 50px;
+        margin: 0px;
+        margin-bottom: 6px;
+        background-color: #ffca38;
+    }
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #FFF338;
+    height: 68vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 21vw;
+        .aclaraciones{
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+    .mediatonic{
+        width: 300px;
+        height: auto;
+    }
+    .rating{
+        width: 200px;
+        margin-right: 10px;
+        margin-bottom: 12px;
+    }
+    
+}
+
+.envelopes{
+    display: flex;
+    width: 240px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    i{
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 50px;
+        color: #fa940f;
+        transition-duration: 400ms;
+    }
+    i:hover{
+        color: black;
+        transition-duration: 400ms;
+        cursor: pointer;
+    }
+}
+
+.aclaraciones{
+    span{
+        color: #fa940f;
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 460px){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        height: 33vh;
+        .parte-nav{
+            flex-direction: row;
+            width: 95%;
+            align-self: center;
+            justify-content: space-between;
+            align-self: center;
+            .idioma{
+                margin-left: 18px;
+                right: 0px;
+            }
+            .instalar{
+                margin-right: 0px;
+                right: 30px;
+                position: fixed;
+                bottom: 67vh
+            }
+            .instalar:hover{
+                width: 130px;
+                height: 60px;
+                font-size: 20px;
+                margin-right: 0px;
+                animation-play-state: paused;
+            }
+            .instalar:active{
+                background-color: #FAFAFF;
+                color: #FFE138;
+                transition-duration: 50ms;
+            }
+            .volver:hover{
+                span::after{
+                    content: "";
+                }
+            }
+            .volver:active{
+                transition-duration: 100ms
+            }
+        }
+    }
+
+    .general{
+        @include sección460;
+    }
+
+    .amigos{
+        @include sección460;
+    }
+
+    .niveles{
+        @include sección460;
+    }
+
+    .personalizacion{
+        @include sección460;
+    }
+
+    .seccion-sistema{
+        padding-top: 10px;
+        h1{
+            font-size: 28px;
+        }
+    }
+
+    .cards{
+        flex-direction: column;
+        height: 270vh;
+    }
+
+    .card{
+        @include card460;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 94vh;
+        section{
+            margin-right: 4vw;
+            margin-left: 4vw;
+            .mediatonic{
+                width: 250px;
+                height: auto;
+            }
+        }
+        .rating{
+            width: 180px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (min-width: 461px) and (max-width:768px){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        height: 33vh;
+        .parte-nav{
+            flex-direction: row;
+            width: 95%;
+            align-self: center;
+            justify-content: space-between;
+            align-self: center;
+            .idioma{
+                margin-left: 18px;
+                right: 0px;
+            }
+            .instalar{
+                margin-right: 0px;
+                right: 30px;
+                position: fixed;
+                bottom: 67vh
+            }
+            .instalar:hover{
+                width: 130px;
+                height: 60px;
+                font-size: 20px;
+                margin-right: 0px;
+                animation-play-state: paused;
+            }
+            .instalar:active{
+                background-color: #FAFAFF;
+                color: #FFE138;
+                transition-duration: 50ms;
+            }
+            .volver:hover{
+                span::after{
+                    content: "";
+                }
+            }
+            .volver:active{
+                transition-duration: 100ms
+            }
+        }
+    }
+
+    .general{
+        @include sección768;
+    }
+
+    .amigos{
+        @include sección768;
+    }
+
+    .niveles{
+        @include sección768;
+    }
+
+    .personalizacion{
+        @include sección768;
+    }
+
+    .cards{
+        flex-direction: column;
+        height: 270vh;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 66vh;
+        section{
+            margin-right: 24vw;
+            margin-left: 24vw;
+            .mediatonic{
+                width: 250px;
+                height: auto;
+            }
+        }
+        .rating{
+            width: 200px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (min-wdth: 769px) and (max-width: 1279px){
+
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        height: 33vh;
+        .parte-nav{
+            flex-direction: row;
+            width: 95%;
+            align-self: center;
+            justify-content: space-between;
+            align-self: center;
+            .idioma{
+                margin-left: 18px;
+                right: 0px;
+            }
+            .instalar{
+                margin-right: 0px;
+                right: 30px;
+                position: fixed;
+                bottom: 67vh
+            }
+            .instalar:hover{
+                width: 130px;
+                height: 60px;
+                font-size: 20px;
+                margin-right: 0px;
+                animation-play-state: paused;
+            }
+            .instalar:active{
+                background-color: #FAFAFF;
+                color: #FFE138;
+                transition-duration: 50ms;
+            }
+            .volver:hover{
+                span::after{
+                    content: "";
+                }
+            }
+            .volver:active{
+                transition-duration: 100ms
+            }
+        }
+    }
+
+    .general{
+        @include sección3;
+    }
+
+    .amigos{
+        @include sección3;
+    }
+
+    .niveles{
+        @include sección3;
+    }
+
+    .personalizacion{
+        @include sección3;
+    }
+
+    .cards{
+        flex-direction: column;
+        height: 270vh;
+    }
+
+    .card{
+        @include card768;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 66vh;
+        section{
+            margin-right: 24vw;
+            margin-left: 24vw;
+            .mediatonic{
+                width: 250px;
+                height: auto;
+            }
+        }
+        .rating{
+            width: 200px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+        }
+    }
+}
